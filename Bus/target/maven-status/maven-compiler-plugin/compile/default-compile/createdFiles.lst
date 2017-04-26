@@ -1,0 +1,4 @@
+ch\hearc\ig\urbanisation\bus\dom\reader\DomReader.class
+ch\hearc\ig\urbanisation\bus\business\Bus.class
+ch\hearc\ig\urbanisation\bus\presentation\bean\BusBean.class
+ch\hearc\ig\urbanisation\bus\dom\reader\BusBuilder.class
