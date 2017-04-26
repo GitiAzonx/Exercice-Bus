@@ -3,15 +3,15 @@
     position: relative;
     background-color: #036fab;
     color: white;
-    padding: 5px;
+    padding: 30px;
     margin: 0px 0px 10px 0px;
 }
 
 #bottom {
     position: relative;
-    background-color: #c2dfef;
-    padding: 5px;
-    margin: 10px 0px 0px 0px;
+    background-color: #036fab;
+    padding: 60px;
+    margin: 20px 0px 0px 0px;
 }
 
 #left {

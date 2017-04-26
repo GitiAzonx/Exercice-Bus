@@ -19,7 +19,7 @@ import org.w3c.dom.NodeList;
  */
 public class BusBuilder {
     
-    private List<Bus> buses;
+    private ArrayList<Bus> buses;
     
     public BusBuilder(){        
     }
@@ -48,11 +48,11 @@ public class BusBuilder {
             Element directionE = (Element)busE.getElementsByTagName("pd").item(0);
             bus.setDirection(directionE.getTextContent());
 
-            buses.add(bus);//On ajoute l'etudiant à la classe
+            buses.add(bus);//On ajoute le bus à la liste
         }
     }
 
-    public List<Bus> getBuses() {
+    public ArrayList<Bus> getBuses() {
         return buses;
     }   
     
