@@ -1,12 +1,45 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Facelet Title</title>
+        <f:metadata>
+            <f:viewAction action="#{busBean.init()}"/>           
+        </f:metadata>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <ui:composition template="/default.xhtml">
+            <ui:define name="top"><h1>J'ai perdu ma valise!</h1></ui:define>
+            <ui:define name="bottom"><h1>(c)Valise</h1></ui:define>
+
+            <ui:define name="content">
+
+                <h2>Liste des bus</h2>
+                <p:dataTable var="bus" value="#{busBean.buses}">
+                    <p:column headerText="Numero">
+                        <h:outputText value="#{bus.id}" />
+                    </p:column>
+
+                    <p:column headerText="Latitude">
+                        <h:outputText value="#{bus.lat}" />
+                    </p:column>
+
+                    <p:column headerText="Longitude">
+                        <h:outputText value="#{bus.lon}" />
+                    </p:column>
+
+                    <p:column headerText="Direction">
+                        <h:outputText value="#{bus.direction}" />
+                    </p:column>
+                </p:dataTable>
+
+                <p:gmap center="41.982622,-87.668999" zoom="15" type="HYBRID" style="width:30%;height:600px" model="#{busBean.simpleModel}" />
+
+            </ui:define>
+        </ui:composition>
     </h:body>
 </html>
 
