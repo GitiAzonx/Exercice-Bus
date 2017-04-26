@@ -64,7 +64,7 @@ public class BusBean implements Serializable{
         for(Bus bus:buses){
             if(bus.getDirection().equals("Northbound")){
                 Double distanceInMiles = (arret.getLatlng().getLat()-bus.getLat())*69;
-                if(distanceInMiles<7 && distanceInMiles>0){
+                if(distanceInMiles<0.3 && distanceInMiles>0){
                     simpleModel.addOverlay(new Marker(new LatLng(bus.getLat(),bus.getLon()),Integer.toString(bus.getId()),"orange.png","http://maps.google.com/mapfiles/ms/micons/blue-dot.png"));     
                 }else{
                     simpleModel.addOverlay(new Marker(new LatLng(bus.getLat(),bus.getLon()),Integer.toString(bus.getId()),"orange.png","http://maps.google.com/mapfiles/ms/micons/bus.png"));     
